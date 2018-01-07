@@ -14,7 +14,7 @@ class SearchBar extends Component {
           onChange={this.onInputChange}
           value={this.props.searchText}
         />
-        <span>{this.props.searchPostfix}</span>
+        <span>&nbsp;{this.props.searchPostfix}&nbsp;</span>
         <input type="submit" value="Getz me dem!" />
       </form>
     );
