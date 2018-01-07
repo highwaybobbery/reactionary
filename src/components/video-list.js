@@ -11,7 +11,7 @@ class VideoList extends Component {
       return <h3>What kind of Butts do you like?</h3>;
     } else {
       const videoItems = this.props.videos.map((video) => {
-        return <VideoListItem key={video.etag} video={video} />
+        return <VideoListItem key={video.etag} video={video} onVideoSelect={this.props.onVideoSelect} />
       });
       return (
         <ul className="col-md-4 list-group">{videoItems}</ul>

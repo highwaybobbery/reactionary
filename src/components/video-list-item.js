@@ -7,11 +7,13 @@ class VideoListItem extends Component {
     this.title = this.video.snippet.title;
     this.description = this.video.snippet.description;
     this.imageUrl = this.video.snippet.thumbnails.default.url;
+    this.onVideoSelect = props.onVideoSelect;
+    this.onVideoClick = this.onVideoClick.bind(this);
   }
 
   render() {
     return (
-      <li className="list-group-item">
+      <li className="list-group-item" onClick={this.onVideoClick}>
         <div className="video-list media">
           <div className="media-left">
             <img className="media-object" src={this.imageUrl} />
@@ -24,6 +26,10 @@ class VideoListItem extends Component {
         </div>
       </li>
     )
+  }
+
+  onVideoClick(e) {
+    this.onVideoSelect(this.video)
   }
 }
 
